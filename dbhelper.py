@@ -11,7 +11,7 @@ class DBHelper:
               db=database)
 
   def get_all_inputs(self):
-  connection = self.connect()
+    connection = self.connect()
     try:
       query = "SELECT description FROM crimes;"
       with connection.cursor() as cursor:
