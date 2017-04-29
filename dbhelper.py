@@ -29,7 +29,7 @@ class DBHelper:
       with connection.cursor() as cursor:
           cursor.execute(query, data)
           connection.commit()
-      finally:
+    finally:
           connection.close()
 
 
