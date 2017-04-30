@@ -1,9 +1,13 @@
-from dbhelper import DBHelper
+#from dbhelper import DBHelper
 from flask import Flask
 from flask import render_template
 from flask import request
+import dbconfig
+if dbconfig.test:
+    from mockdbhelper import MockDBHelper as DBHelper
+else:
+    from dbhelper import DBHelper
 
-##hello, hello, hello
 
 app = Flask(__name__)
 DB = DBHelper()
@@ -38,5 +42,3 @@ def clear():
   
 if __name__ == '__main__':
   app.run(port=5000, debug=True)
-
-  
